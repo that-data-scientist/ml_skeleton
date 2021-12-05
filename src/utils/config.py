@@ -1,5 +1,5 @@
 import os
-from typing import Dict, Any
+from typing import Any
 
 import toml
 
@@ -11,7 +11,7 @@ PROJECT_DIR = os.path.abspath(
 
 
 @log_step
-def load_config() -> Dict[str, Any]:
+def load_config() -> Any:
     filepath = os.path.join(PROJECT_DIR, "config.toml")
     with open(filepath, "r") as f:
         return toml.load(f)

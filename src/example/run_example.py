@@ -3,21 +3,21 @@ from src.utils.console import log_step
 
 
 class Example:
-    def __init__(self):
+    def __init__(self) -> None:
         self.value = 10
 
-    def get_result(self):
+    def get_result(self) -> str:
         config = load_config()
-        final_result = self.value + config['to_add']
+        final_result: str = self.value + config["to_add"]
         print("Final result - ", final_result)
         return final_result
 
 
 @log_step
-def main():
+def main() -> None:
     instance = Example()
     instance.get_result()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
